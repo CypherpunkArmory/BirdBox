@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "REPO_NAME", "\"Octave\""
+        buildConfigField "String", "REPO_NAME", "\"Thunderbird\""
 
         buildConfigField 'String', 'VERSION_CODE', '\"' + rootProject.ext.appVersionCode + '\"'
         buildConfigField 'String', 'VERSION_NAME', '\"' + rootProject.ext.appVersionName + '\"'
@@ -34,7 +34,7 @@ android {
         buildConfigField "String", "DEFAULT_USERNAME", "\"userland\""
 
         //controls whether to ask for session type or not
-        buildConfigField 'boolean', 'USE_DEFAULT_SERVICE_TYPE', 'false'
+        buildConfigField 'boolean', 'USE_DEFAULT_SERVICE_TYPE', 'true'
         buildConfigField "String", "DEFAULT_LAUNCH_TYPE", "\"vnc\""
 
         buildConfigField "String", "VNC_DISPLAY", "\"52\""
@@ -76,6 +76,10 @@ android {
         resValue "string", "pref_dns_default", "\"search Home\\nnameserver 8.8.8.8\\nnameserver 8.8.4.4\""
 
         //these are used to help determine the resolution
+        buildConfigField 'boolean', 'DEFAULT_PREF_CUSTOM_SCALING_ENABLED', 'true'
+        resValue "string", "default_pref_custom_scaling_enabled", "true"
+        buildConfigField 'String', 'DEFAULT_PREF_SCALING', "\"1.0\""
+        resValue "string", "default_pref_scaling", "1.0"
         buildConfigField 'boolean', 'FORCE_PORTRAIT_GEOMETRY', 'true'
         buildConfigField 'int', "MAX_DIMENSION", "1000"
         buildConfigField 'int', "MIN_DIMENSION", "360"
