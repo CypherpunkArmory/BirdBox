@@ -1,4 +1,4 @@
-package tech.ula.octave
+package tech.ula.thunderbird
 
 import android.content.Intent
 import android.os.Bundle
