@@ -1,4 +1,4 @@
-package tech.ula.thunderbird
+package tech.ula.birdbox
 
 import android.content.Intent
 import android.os.Bundle

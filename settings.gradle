@@ -1,4 +1,4 @@
-rootProject.name = "Thunderbird"
+rootProject.name = "BirdBox"
 include ':app', ':UserLAndLibrary'
 project(':UserLAndLibrary').projectDir = new File('UserLAndLibrary/app')
 
