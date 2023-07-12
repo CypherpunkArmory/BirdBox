@@ -75,25 +75,31 @@ android {
         buildConfigField "String", "DEFAULT_DNS_NAMESERVERS", "\"nameserver 8.8.8.8\\nnameserver 8.8.4.4\""
         resValue "string", "pref_dns_default", "\"search Home\\nnameserver 8.8.8.8\\nnameserver 8.8.4.4\""
 
+        //this can be used the hide the settings menu
+        buildConfigField 'boolean', 'DEFAULT_HIDE_SETTINGS', 'false'
+        resValue "string", "pref_hide_settings_default", "false"
+
         //these are used to help determine the resolution
-        buildConfigField 'boolean', 'DEFAULT_PREF_CUSTOM_SCALING_ENABLED', 'true'
-        resValue "string", "default_pref_custom_scaling_enabled", "true"
-        buildConfigField 'String', 'DEFAULT_PREF_SCALING', "\"1.0\""
-        resValue "string", "default_pref_scaling", "1.0"
+        //TODO rework these into the math before next Relag merge
         buildConfigField 'boolean', 'FORCE_PORTRAIT_GEOMETRY', 'true'
-        buildConfigField 'int', "MAX_DIMENSION", "1000"
+        buildConfigField 'int', "MAX_DIMENSION", "10000"
         buildConfigField 'int', "MIN_DIMENSION", "360"
 
         //these can be used to turn off certain prompts we present to users
         buildConfigField 'boolean', 'HAS_LOGGER', 'false'
         buildConfigField 'boolean', 'ASK_FOR_FEEDBACK', 'true'
         buildConfigField 'boolean', 'ASK_FOR_CONTRIBUTION', 'false'
+        buildConfigField 'boolean', 'ASK_FOR_PAYMENT', 'true'
 
         //these can be used to remove items from the setting menu
+        resValue "string", "settings_enabled", "true"
         resValue "string", "help_enabled", "false"
         resValue "string", "wiki_enabled", "false"
         resValue "string", "toc_enabled", "false"
         resValue "string", "clear_support_files_enabled", "false"
+
+        //this is used to hide many of the preferences from the user
+        buildConfigField 'boolean', 'HIDE_USERLAND_PREFS', 'false'
 
         //this should be set to true if the assets are embedded in the filesystem
         buildConfigField 'boolean', 'FILESYSTEM_ONLY_ASSET', 'false'
@@ -102,6 +108,22 @@ android {
 
         //this is the default github release for filesystems to use if not overwritten by a custom url
         buildConfigField 'String', 'DEFAULT_RELEASE', "\"latest\""
+
+        //this controls if we use the DownloadManager
+        buildConfigField 'boolean', 'USE_DOWNLOAD_MANAGER', 'true'
+
+        //these control what permissions we ask for
+        buildConfigField 'boolean', 'USES_CAMERA', 'false'
+        buildConfigField 'boolean', 'USES_MICROPHONE', 'false'
+
+        //this controls if we support firing Android intents from the Linux side
+        buildConfigField 'boolean', 'POLL_FOR_INTENTS', 'false'
+
+        //has a10 shmem proot build
+        buildConfigField 'boolean', 'HAS_A10_PROOT', 'true'
+
+        //Need unique provider authorities
+        buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"tech.ula.birdbox.provider.fileprovider\""
     }
 
     buildTypes {
